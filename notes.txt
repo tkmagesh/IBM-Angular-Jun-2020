@@ -1,0 +1,8 @@
+Attribute Directives
+    - The attributes of an existing dom nodes are manipulated
+    - Do not change the structure of the dom tree (by adding / removing dom nodes)
+    - enclosed within []
+
+Structural Directives
+    - changes the structure of the dom tree (by adding / removing dom nodes)
+    - prefixed with an *

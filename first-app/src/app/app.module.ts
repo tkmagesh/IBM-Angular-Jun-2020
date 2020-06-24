@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { ProductsComponent } from './products/products.component';
 
 /* 
   declarations - register all the UI entities of the application (Components, Pipes, Directives)
@@ -15,6 +16,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
   declarations: [
     AppComponent
     , CalculatorComponent
+    , ProductsComponent
   ],
   imports: [
     BrowserModule
@@ -22,6 +24,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
   providers: [],
   bootstrap: [
     /* AppComponent, */
+    ProductsComponent,
     CalculatorComponent
   ]
 })
