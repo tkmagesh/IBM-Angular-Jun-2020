@@ -16,7 +16,7 @@
     <option value="SGD">SGD</option>
 </select>
 <div
-    *ngIf="result > 0; else noResult"
+    *ngIf="result !== 0; else noResult"
     [ngClass]="{good : result >= 10000, bad : result < 10000}">
     {{result | currency:currencySymbol}}
 </div>

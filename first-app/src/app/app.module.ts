@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ProductsComponent } from './products/products.component';
 
+import { CalculatorService } from './calculator/calculatorService'
 /* 
   declarations - register all the UI entities of the application (Components, Pipes, Directives)
   providers - register the NON-UI entities of the application ( services )
@@ -21,7 +22,9 @@ import { ProductsComponent } from './products/products.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    CalculatorService
+  ],
   bootstrap: [
     /* AppComponent, */
     ProductsComponent,

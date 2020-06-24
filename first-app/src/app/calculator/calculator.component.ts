@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CalculatorService } from  './calculatorService'
 
 @Component({
     selector : 'app-calculator', 
@@ -24,6 +25,18 @@ export class CalculatorComponent{
     currencySymbol = 'USD';
     currentDate : Date = new Date();
 
+   /*  
+    calculatorService : CalculatorService = null;
+
+    constructor(_calculatorService: CalculatorService){
+        this.calculatorService = _calculatorService;
+    } 
+    */
+
+    constructor(private calculatorService: CalculatorService) {
+        
+    }
+
     setN1(value){
         this.n1 = value;
     }
@@ -33,15 +46,15 @@ export class CalculatorComponent{
     }
 
     onAddClick(){
-        this.result = this.n1 + this.n2;
+        this.result = this.calculatorService.add(this.n1, this.n2);
     }
     onSubtractClick(){
-        this.result = this.n1 - this.n2;
+        this.result = this.calculatorService.subtract(this.n1, this.n2);
     }
     onMultiplyClick(){
-        this.result = this.n1 * this.n2;
+        this.result = this.calculatorService.multiply(this.n1, this.n2);
     }
     onDivideClick(){
-        this.result = this.n1 / this.n2;
+        this.result = this.calculatorService.divide(this.n1, this.n2);
     }
 }
