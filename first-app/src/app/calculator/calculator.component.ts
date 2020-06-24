@@ -21,7 +21,7 @@ export class CalculatorComponent{
     n1 : number = 0;
     n2 : number = 0;
     result : number = 0;
-
+    currencySymbol = 'USD';
     currentDate : Date = new Date();
 
     setN1(value){

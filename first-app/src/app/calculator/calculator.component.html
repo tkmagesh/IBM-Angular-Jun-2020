@@ -7,9 +7,17 @@
 <input type="button" value="Subtract" (click)="onSubtractClick()">
 <input type="button" value="Multiply" (click)="onMultiplyClick()">
 <input type="button" value="Divide" (click)="onDivideClick()">
+<br>
+<label for="">Currency : </label>
+<select (change)="currencySymbol=$event.target.value">
+    <option value="USD">USD</option>
+    <option value="INR">INR</option>
+    <option value="AUD">AUD</option>
+    <option value="SGD">SGD</option>
+</select>
 <div
     *ngIf="result > 0; else noResult"
     [ngClass]="{good : result >= 10000, bad : result < 10000}">
-    {{result | currency:'INR'}}
+    {{result | currency:currencySymbol}}
 </div>
 <ng-template #noResult><div>[Try any of the operations]</div></ng-template>
