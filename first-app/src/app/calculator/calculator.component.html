@@ -7,6 +7,9 @@
 <input type="button" value="Subtract" (click)="onSubtractClick()">
 <input type="button" value="Multiply" (click)="onMultiplyClick()">
 <input type="button" value="Divide" (click)="onDivideClick()">
-<div [ngClass]="{good : result >= 10000, bad : result < 10000}">
+<div
+    *ngIf="result > 0; else noResult"
+    [ngClass]="{good : result >= 10000, bad : result < 10000}">
     {{result | currency:'INR'}}
 </div>
+<ng-template #noResult><div>[Try any of the operations]</div></ng-template>
