@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BugTrackerComponent } from './bug-tracker/bugTracker.component';
 
 import { TrimTextPipe } from './bug-tracker/pipes/trimText.pipe';
+import { SortPipe } from './bug-tracker/pipes/sort.pipe';
 
 import { BugOperationsService } from './bug-tracker/services/bugOperations.service'
 @NgModule({
@@ -12,6 +13,7 @@ import { BugOperationsService } from './bug-tracker/services/bugOperations.servi
     AppComponent
     , BugTrackerComponent
     , TrimTextPipe
+    , SortPipe
   ],
   imports: [
     BrowserModule
