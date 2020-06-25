@@ -23,7 +23,7 @@ export class BugTrackerComponent implements OnInit {
 
     onAddNewClick(newBugName : string){
         const newBug : Bug = this.bugOperations.createNew(newBugName);
-        this.bugs.push(newBug);
+        this.bugs = [...this.bugs, newBug];
     }
 
     onRemoveClick(bugToRemove: Bug){
