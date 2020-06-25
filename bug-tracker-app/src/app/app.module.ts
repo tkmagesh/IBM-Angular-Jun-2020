@@ -10,6 +10,8 @@ import { SortPipe } from './bug-tracker/pipes/sort.pipe';
 import { ClosedCountPipe } from './bug-tracker/pipes/closedCount.pipe';
 
 import { BugOperationsService } from './bug-tracker/services/bugOperations.service'
+import { BugStorageService } from './bug-tracker/services/bugStorage.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,6 +25,7 @@ import { BugOperationsService } from './bug-tracker/services/bugOperations.servi
   ],
   providers: [
     BugOperationsService
+    , BugStorageService
   ],
   bootstrap: [AppComponent]
 })
