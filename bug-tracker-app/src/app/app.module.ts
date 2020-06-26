@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { UtilsModule } from "../utils/utils.module";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
+
+//refactor the below into BugTrackerModule
 import { BugTrackerComponent } from './bug-tracker/bugTracker.component';
 
 import { ClosedCountPipe } from './bug-tracker/pipes/closedCount.pipe';
@@ -12,6 +15,7 @@ import { BugStorageService } from './bug-tracker/services/bugStorage.service';
 
 import { BugStatsComponent } from './bug-tracker/views/bugStats.component';
 import { BugEditComponent } from "./bug-tracker/views/bugEdit.component";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,6 +27,7 @@ import { BugEditComponent } from "./bug-tracker/views/bugEdit.component";
   imports: [
     BrowserModule
     , UtilsModule
+    , HttpClientModule
   ],
   providers: [
     BugOperationsService
