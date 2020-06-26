@@ -10,7 +10,7 @@ export class BugTrackerComponent implements OnInit {
     bugs: Bug[] = [];
     sortAttr : string = 'id';
     isDesc : boolean = false;
-    newBugName : string = '';
+    
 
     constructor(private bugOperations : BugOperationsService){
 
@@ -23,8 +23,7 @@ export class BugTrackerComponent implements OnInit {
         this.bugs.push({ id: 2, name: 'Application not responding', isClosed: false, createdAt: new Date() }); */
     }
 
-    onAddNewClick(){
-        const newBug : Bug = this.bugOperations.createNew(this.newBugName);
+    onNewBugCreated(newBug : Bug){
         this.bugs = [...this.bugs, newBug];
     }
 

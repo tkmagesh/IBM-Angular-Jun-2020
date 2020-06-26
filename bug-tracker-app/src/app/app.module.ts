@@ -13,12 +13,13 @@ import { BugOperationsService } from './bug-tracker/services/bugOperations.servi
 import { BugStorageService } from './bug-tracker/services/bugStorage.service';
 
 import { BugStatsComponent } from './bug-tracker/views/bugStats.component';
-
+import { BugEditComponent } from "./bug-tracker/views/bugEdit.component";
 @NgModule({
   declarations: [
     AppComponent
     , BugTrackerComponent
     , BugStatsComponent
+    , BugEditComponent
     , TrimTextPipe
     , SortPipe
     , ElapsedPipe
