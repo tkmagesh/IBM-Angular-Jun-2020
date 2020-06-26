@@ -29,13 +29,19 @@ export class BugTrackerComponent implements OnInit {
     }
 
     onRemoveClick(bugToRemove: Bug){
-        this.bugOperations.remove(bugToRemove);
-        this.bugs = this.bugs.filter(bug => bug !== bugToRemove);
+        this.bugOperations
+            .remove(bugToRemove)
+            .subscribe(() => {
+                this.bugs = this.bugs.filter(bug => bug !== bugToRemove)
+            });
+        
     }
 
     onBugNameClick(bugToToggle : Bug){
-        const toggledBug = this.bugOperations.toggle(bugToToggle);
-        this.bugs = this.bugs.map(bug => bug === bugToToggle ? toggledBug : bug);
+        this.bugOperations
+            .toggle(bugToToggle)
+            .subscribe(toggledBug => this.bugs = this.bugs.map(bug => bug === bugToToggle ? toggledBug : bug));
+        
     }
 
     onRemoveClosedClick(){
