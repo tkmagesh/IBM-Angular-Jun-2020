@@ -12,10 +12,13 @@ import { ClosedCountPipe } from './bug-tracker/pipes/closedCount.pipe';
 import { BugOperationsService } from './bug-tracker/services/bugOperations.service'
 import { BugStorageService } from './bug-tracker/services/bugStorage.service';
 
+import { BugStatsComponent } from './bug-tracker/views/bugStats.component';
+
 @NgModule({
   declarations: [
     AppComponent
     , BugTrackerComponent
+    , BugStatsComponent
     , TrimTextPipe
     , SortPipe
     , ElapsedPipe
