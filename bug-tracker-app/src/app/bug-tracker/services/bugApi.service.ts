@@ -1,16 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { Bug } from "../models/Bug";
-import { Injectable } from "@angular/core";
+import { Injectable, InjectionToken, Inject } from "@angular/core";
 import { Observable } from 'rxjs';
-import { environment } from "../../../environments/environment";
 
-@Injectable({
-    providedIn : "root",
-})
+
+@Injectable()
 export class BugApiService{
-    private serviceEndPoint : string = environment.serviceEndPoint;
 
-    constructor(private http: HttpClient){
+    constructor(private http: HttpClient, 
+        @Inject(SERVICE_ENDPOINT) private serviceEndPoint: string){
 
     }
     getAll() : Observable<Bug[]> {
@@ -34,3 +32,6 @@ export class BugApiService{
     }
 
 }
+
+export const SERVICE_ENDPOINT : InjectionToken<string> 
+    = new InjectionToken<string>('serviceEndPoint');

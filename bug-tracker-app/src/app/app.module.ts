@@ -16,6 +16,11 @@ import { BugStorageService } from './bug-tracker/services/bugStorage.service';
 import { BugStatsComponent } from './bug-tracker/views/bugStats.component';
 import { BugEditComponent } from "./bug-tracker/views/bugEdit.component";
 
+import { environment } from "../environments/environment";
+import { SERVICE_ENDPOINT, BugApiService } from './bug-tracker/services/bugApi.service';
+
+const serviceEndPoint : string = environment.serviceEndPoint;
+
 @NgModule({
   declarations: [
     AppComponent
@@ -30,7 +35,9 @@ import { BugEditComponent } from "./bug-tracker/views/bugEdit.component";
     , HttpClientModule
   ],
   providers: [
-    BugOperationsService
+    { provide: BugOperationsService, useClass: BugOperationsService},
+    { provide: SERVICE_ENDPOINT, useValue: environment.serviceEndPoint},
+    BugApiService
     , BugStorageService
   ],
   bootstrap: [AppComponent]
