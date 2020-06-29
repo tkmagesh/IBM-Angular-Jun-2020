@@ -19,26 +19,19 @@ import { BugDetailsComponent } from './bugTracker/views/bugDetails.component';
 
 import { LoginComponent } from './bugTracker/auth/Login.component';
 
-import {RouterModule, Routes, ActivatedRouteSnapshot, RouterStateSnapshot, Resolve} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 
 import { LoggedInGuard } from './bugTracker/auth/LoggedInGuard';
-import { Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
-import { Bug } from './bugTracker/models/Bug';
+
 
 //Routing
-
-
-
-
-
 let routes : Routes = [
     {path : '', redirectTo : '/bugs', pathMatch : 'full'},
     {path : 'login', component : LoginComponent},
     {path : 'add', component : BugEditComponent},
     {path : 'details/:id', component : BugDetailsComponent},
     {path : 'bugs', component : BugTrackerComponent, 
-      canActivate : [LoggedInGuard]}
+      canActivate : [LoggedInGuard] }
 ]
 
 @NgModule({
